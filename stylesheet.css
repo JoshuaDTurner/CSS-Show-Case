@@ -17,7 +17,7 @@ ul {
   padding: 30px;
 }
 
-a {
+.pages {
   text-align: center;
   color: #f6f4f8;
   overflow: hidden;
@@ -26,17 +26,17 @@ a {
   position: relative;
   text-decoration: none;
 }
-a:hover::after {
+.pages:hover::after {
   transform: translate3d(0, 0, 0);
 }
-a::before,
-a::after {
+.pages::before,
+.pages::after {
   content: "";
   position: absolute;
   width: 100%;
   left: 0;
 }
-a::before {
+.pages::before {
   background-color: #d27d54;
   height: 2px;
   bottom: 0;
@@ -44,7 +44,7 @@ a::before {
   transform: scaleX(0);
   transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
 }
-a::after {
+.pages::after {
   content: attr(data-replace);
   height: 100%;
   top: 0;
@@ -54,11 +54,11 @@ a::after {
   color: #d27d54;
 }
 
-a:hover::before {
+.pages:hover::before {
   transform-origin: 0% 50%;
   transform: scaleX(1);
 }
-a:hover::after {
+.pages:hover::after {
   transform: translate3d(0, 0, 0);
 }
 h2 {
@@ -131,4 +131,23 @@ p {
   color: #2e3157;
   margin-left: 10px;
   margin-right: 10px;
+}
+.socials {
+  height: 100px;
+  width: 100px;
+  margin: 0%;
+}
+footer {
+  padding: 100px;
+  background-color: #272727;
+  display: flex;
+  justify-content: space-around;
+}
+.social-buttons {
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+}
+.social-buttons:hover {
+  transform: scale(1.5);
 }
