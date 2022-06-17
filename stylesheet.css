@@ -70,7 +70,7 @@ h2 {
 }
 h3 {
   font-size: 24px;
-  color: #d27d54;
+  color: #2e3157;
 }
 p {
   font-size: 16px;
@@ -79,35 +79,44 @@ p {
   background-color: #2e3157;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   padding: 50px;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 .inner-content1 {
   background-color: #f6f4f8;
-  width: 500px;
+  width: 35.45%;
+  min-width: 345px;
   padding: 40px;
   box-shadow: 1px 1px 2px #131313;
   color: #2e3157;
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .content-gallery {
   background-color: #f6f4f8;
   padding: 50px;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .inner-gallery {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #7f5869;
-  /* padding: 40px; */
-  width: 350px;
+  background-color: #1b182a;
+  width: 550px;
   color: #131313;
   height: max-content;
   box-shadow: 1px 1px 2px #131313;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  min-width: 345px;
 }
 
 .inner-gallery h3,
@@ -115,7 +124,7 @@ p {
 .inner-gallery p {
   width: 80%;
   margin: 15px;
-  color: #272727;
+  color: #f6f4f8;
 }
 .content2 {
   background-color: #2e3157;
@@ -138,7 +147,7 @@ p {
   margin: 0%;
 }
 footer {
-  padding: 100px;
+  padding: 50px;
   background-color: #272727;
   display: flex;
   justify-content: space-around;
@@ -150,4 +159,5 @@ footer {
 }
 .social-buttons:hover {
   transform: scale(1.5);
+  transition: 0.5s;
 }
