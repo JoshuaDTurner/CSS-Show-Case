@@ -1,7 +1,9 @@
+/*sets all the items to have 0% margin and have a border box in order to make items that default have a margin so we dont have to manually do it*/
 * {
   box-sizing: border-box;
   margin: 0%;
 }
+/*set the font family for all text*/
 p,
 h1,
 h2,
@@ -10,177 +12,216 @@ li {
   font-family: Arial, Helvetica, sans-serif;
 }
 h1 {
+  /*set the standard font size to 64 pixels and the color to #f6f4f8*/
   font-size: 64px;
-  margin: 20px;
   color: #f6f4f8;
+  /*aligns the main title in the header*/
+  margin: 20px;
   text-align: center;
 }
 header {
+  /*sets the color for the header*/
   background-color: #131313;
+  /*sets the header as a flex-box*/
   display: flex;
+  /*send the nav and the main title to the sides of the screan*/
   justify-content: space-around;
+  /*makes the nav bar move down when it doesnt fit on the side*/
   flex-wrap: wrap;
 }
-nav {
-  width: fit-content;
-  height: fit-content;
-}
 .pages {
-  text-align: center;
-  color: #f6f4f8;
-  overflow: hidden;
-  float: left;
+  /*gets rid of the underlines and sets the font color to f6f4f8*/
   text-decoration: none;
-  position: relative;
+  color: #f6f4f8;
+  /*sets the links apart and pits them in the middle of the header*/
+  text-align: center;
   margin: 50px;
   margin-left: 20px;
-}
-.pages:hover::after {
-  transform: translate3d(0, 0, 0);
+  float: left;
+  /*sets the position of the animation below the text*/
+  overflow: hidden;
+  position: relative;
 }
 .pages::before,
 .pages::after {
+  /*set the bar to start on the far left of the text*/
   content: "";
   position: absolute;
   width: 100%;
   left: 0;
 }
 .pages::before {
+  /*set the shape, color, and the movement speed of the bar moving in*/
   background-color: #d27d54;
   height: 2px;
   bottom: 0;
   transform-origin: 100% 50%;
   transform: scaleX(0);
-  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 }
 .pages::after {
+  /*set the shape, color, and the movement speed of the bar moving out*/
   content: attr(data-replace);
   height: 100%;
   top: 0;
   transform-origin: 100% 50%;
   transform: translate3d(200%, 0, 0);
-  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: transform 0.1s cubic-bezier(0.76, 0, 0.24, 1);
   color: #d27d54;
 }
-
 .pages:hover::before {
+  /*set the size of the hoverable area*/
   transform-origin: 0% 50%;
   transform: scaleX(1);
 }
 .pages:hover::after {
+  /*sets the bar to start disapearing*/
   transform: translate3d(0, 0, 0);
 }
 h2 {
+  /*set the typography for all section titles*/
   font-size: 40px;
-  background-color: #272727;
-  padding: 20px;
-  text-align: center;
   color: #f6f4f8;
+  /*set the color of the background behind the text to 272727*/
+  background-color: #272727;
+  /*creates null space for the text*/
+  padding: 20px;
+  /*sets the text to the middle of the screen*/
+  text-align: center;
 }
 h3 {
+  /*set the text box titles typography*/
   font-size: 24px;
   color: #2e3157;
 }
 p {
+  /*sets all content texts typography*/
   font-size: 16px;
   line-height: 23px;
   word-spacing: 1px;
 }
 .content1 {
+  /*set the background color of the space to 2e3157*/
   background-color: #2e3157;
+  /*sets a flex-box to space the content evenly and set the flex-wrap to wrap the content will move down instead of off screen*/
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  /*creates null space between the sides, top and, bottom of the section*/
   padding: 50px;
   padding-top: 60px;
   padding-bottom: 60px;
 }
 .inner-content1 {
+  /*set the background to a light color and font to a dark color so its easier to read the text*/
   background-color: #f6f4f8;
+  color: #2e3157;
+  /*sets the size so it can resize if need be*/
   width: 35.45%;
   min-width: 345px;
+  /*creates nulls space between the other content boxes and the text within the boxes themselves*/
   padding: 40px;
-  box-shadow: 1px 1px 2px #131313;
-  color: #2e3157;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
+  /*creats a box shadow so it pops out to draw attention to it*/
+  box-shadow: 1px 1px 2px #131313;
 }
 .content-gallery {
+  /*set the sections theme to a light color to be able to make the content pop as well as allowing us to make the gallery boxes a dark color the make the images pop*/
   background-color: #f6f4f8;
+  /*creates null space on all the sides of the gallery to make the gallery boxes more visable*/
   padding: 50px;
+  /*sets a flex-box to space the content evenly and set the flex-wrap to wrap the content will move down instead of off screen*/
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
 .inner-gallery {
+  /*sets a flex-box to column amd lines it up so it displays the content up and down instead of left and right*/
   display: flex;
   flex-direction: column;
   align-items: center;
+  /*sets the backgorund color to a dark color to make the image pop more*/
   background-color: #1b182a;
-  width: 550px;
-  color: #131313;
-  height: max-content;
+  /*creats a box shadow to make the gallerys pop out more from the background*/
   box-shadow: 1px 1px 2px #131313;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  /*sets the gallery boxes size*/
+  width: 550px;
   min-width: 345px;
+  /*creates null space in and around the gallery boxes to make it easy to read*/
+  margin: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
 .inner-gallery h3,
 .inner-gallery img,
 .inner-gallery p {
+  /*creats null sapce between everything*/
   width: 80%;
   margin: 15px;
+  /*sets the font color to a light color*/
   color: #f6f4f8;
 }
 .content2 {
+  /*set the color to a darker shade to make the content pop out more*/
   background-color: #2e3157;
+  /*creates null space between the main content box and the sides and top of the section*/
   padding: 50px;
   padding-top: 100px;
   padding-bottom: 100px;
 }
 .inner-content2 {
+  /*set the background to a light color and font to a dark color so its easier to read the text*/
   background-color: #f6f4f8;
-  width: 100%;
-  padding: 40px;
-  box-shadow: 1px 1px 2px #131313;
   color: #2e3157;
+  /*creats a box shadow so it pops out to draw attention to it*/
+  box-shadow: 1px 1px 2px #131313;
+  /*sets the size so it can resize if need be*/
+  width: 100%;
+  /*creates null space between the side of the screen and in the content box itself*/
+  padding: 40px;
   margin-left: 10px;
   margin-right: 10px;
 }
 .socials {
-  height: 100px;
-  width: 100px;
+  /*sets the size of the image for the social buttons*/
   margin: 0%;
-}
-footer {
-  padding: 50px;
-  background-color: #272727;
-  display: flex;
-  justify-content: space-around;
+  max-width: 100%;
+  height: auto;
+  min-height: 75px;
+  min-height: 75px;
 }
 .social-buttons {
+  /*set the buttons in the middle of the footer*/
   margin: 20px;
+  /*create size for the social buttons*/
   width: 100px;
   height: 100px;
 }
 .social-buttons:hover {
+  /*set how big the social buttons get when you hover over them and how long the animation takes*/
   transform: scale(1.5);
   transition: 0.5s;
 }
 .content1-text {
+  /*creats null space between the text and the title*/
   margin-top: 15px;
 }
+footer {
+  /*set the footer background color*/
+  background-color: #272727;
+  /*spreads the social buttons out and puts them in the middle of the footer*/
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+}
 img {
+  /*creates null space on the top and bottom of the image*/
   margin-bottom: 50px;
+  margin-top: 20px;
+  /*set the image size*/
   width: 350px;
   height: 200px;
-  display: inline;
-  margin-top: 20px;
 }

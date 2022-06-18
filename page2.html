@@ -13,6 +13,18 @@
       .inner-content1 {
         width: 100%;
       }
+      #color {
+        color: #d27d54;
+      }
+      #florida {
+        /*set the image so it can resize when the browser size changes*/
+        max-width: 100%;
+        height: auto;
+        /*limites how small the image can become height wise*/
+        min-height: 200px;
+        /*makes it so the image crops as it gets smaller*/
+        object-fit: cover;
+      }
     </style>
   </head>
   <body>
@@ -34,10 +46,10 @@
             <p class="content1-text">
               to celebrate pride month we have some limited time deals, from
               june 1st to the end of the month we are using
-              <span>color!!!!!</span> now with our limited color we can be out
-              with the old black and white and into a more inclusive space.
-              remember its very limited only from june fisrt to July 1st buy
-              now!
+              <span id="color">color!!!!!</span> now with our limited color we
+              can be out with the old black and white and into a more inclusive
+              space. remember its very limited only from june first to July 1st
+              buy now!
             </p>
           </div>
         </div>
@@ -46,6 +58,7 @@
         <div class="inner-gallery">
           <h3>How to buy</h3>
           <img
+            id="florida"
             src="images/florida.PNG"
             alt="image of a map to our workplace at 152 gates of heck rd florida"
           />
