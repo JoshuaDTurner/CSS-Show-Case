@@ -1,5 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /*sets all the items to have 0% margin and have a border box in order to make items that default have a margin so we dont have to manually do it*/
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0%;
 }
@@ -23,10 +31,14 @@ header {
   /*sets the color for the header*/
   background-color: #131313;
   /*sets the header as a flex-box*/
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   /*send the nav and the main title to the sides of the screan*/
+  -ms-flex-pack: distribute;
   justify-content: space-around;
   /*makes the nav bar move down when it doesnt fit on the side*/
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .pages {
@@ -55,27 +67,49 @@ header {
   background-color: #d27d54;
   height: 2px;
   bottom: 0;
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
   transform-origin: 100% 50%;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
   transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  -o-transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
   transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1),
+    -webkit-transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 }
 .pages::after {
   /*set the shape, color, and the movement speed of the bar moving out*/
   content: attr(data-replace);
   height: 100%;
   top: 0;
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
   transform-origin: 100% 50%;
+  -webkit-transform: translate3d(200%, 0, 0);
   transform: translate3d(200%, 0, 0);
+  -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: -webkit-transform 0.1s cubic-bezier(0.76, 0, 0.24, 1);
+  -o-transition: transform 0.1s cubic-bezier(0.76, 0, 0.24, 1);
   transition: transform 0.1s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: transform 0.1s cubic-bezier(0.76, 0, 0.24, 1),
+    -webkit-transform 0.1s cubic-bezier(0.76, 0, 0.24, 1);
   color: #d27d54;
 }
 .pages:hover::before {
   /*set the size of the hoverable area*/
+  -webkit-transform-origin: 0% 50%;
+  -ms-transform-origin: 0% 50%;
   transform-origin: 0% 50%;
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
   transform: scaleX(1);
 }
 .pages:hover::after {
   /*sets the bar to start disapearing*/
+  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 h2 {
@@ -104,8 +138,13 @@ p {
   /*set the background color of the space to 2e3157*/
   background-color: #2e3157;
   /*sets a flex-box to space the content evenly and set the flex-wrap to wrap the content will move down instead of off screen*/
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   /*creates null space between the sides, top and, bottom of the section*/
   padding: 50px;
@@ -126,6 +165,7 @@ p {
   margin-top: 20px;
   margin-bottom: 20px;
   /*creats a box shadow so it pops out to draw attention to it*/
+  -webkit-box-shadow: 1px 1px 2px #131313;
   box-shadow: 1px 1px 2px #131313;
 }
 .content-gallery {
@@ -134,18 +174,31 @@ p {
   /*creates null space on all the sides of the gallery to make the gallery boxes more visable*/
   padding: 50px;
   /*sets a flex-box to space the content evenly and set the flex-wrap to wrap the content will move down instead of off screen*/
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .inner-gallery {
   /*sets a flex-box to column amd lines it up so it displays the content up and down instead of left and right*/
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   /*sets the backgorund color to a dark color to make the image pop more*/
   background-color: #1b182a;
   /*creats a box shadow to make the gallerys pop out more from the background*/
+  -webkit-box-shadow: 1px 1px 2px #131313;
   box-shadow: 1px 1px 2px #131313;
   /*sets the gallery boxes size*/
   width: 550px;
@@ -177,6 +230,7 @@ p {
   background-color: #f6f4f8;
   color: #2e3157;
   /*creats a box shadow so it pops out to draw attention to it*/
+  -webkit-box-shadow: 1px 1px 2px #131313;
   box-shadow: 1px 1px 2px #131313;
   /*sets the size so it can resize if need be*/
   width: 100%;
@@ -202,7 +256,11 @@ p {
 }
 .social-buttons:hover {
   /*set how big the social buttons get when you hover over them and how long the animation takes*/
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
   transform: scale(1.5);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
 }
 .content1-text {
@@ -214,7 +272,10 @@ footer {
   background-color: #272727;
   /*spreads the social buttons out and puts them in the middle of the footer*/
   padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
 }
 img {
